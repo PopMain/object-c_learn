@@ -3,7 +3,7 @@
 //
 
 #import "MyObject.h"
-
+#import "MyObject_Extension.h"
 
 @implementation MyObject
 @synthesize weight;
@@ -38,6 +38,10 @@
 -(int*) testFun2 {
     int i = 10;
     return &i;
+}
+
+-(void) sayHello {
+    NSLog(@"hello, %d", self.say);
 }
 @end
 

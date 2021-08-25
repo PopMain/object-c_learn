@@ -9,6 +9,8 @@
 #import "MyObject.h"
 #import "SquareExtension.h"
 #import "NSStringGetCopyRight.h"
+#import "MyObject+Test.h"
+#import "MyObject_Extension.h"
 
 extern int a, b;
 int a = 1;
@@ -72,6 +74,8 @@ NSString *intToBinary(int intValue) {
     NSLog(@"a=%d, b=%d, c=%d, f=%f, func=%d, len=%d", a, b, c, f, i, LENGTH);
     const int *p = &a;
     NSLog(@"p=%d", *p);
+    a = 50;
+    NSLog(@"p=%x , a=%x", p, &a);
     int *const p1 = &b;
     *p1 = c;
     NSLog(@"p1=%d", *p1);
@@ -117,6 +121,8 @@ NSString *intToBinary(int intValue) {
     MyObject *obj1 = [[MyObject alloc] init];
     MyObject *obj2 = [[MyObject alloc] init];
     [obj2 tstFun:99];
+    [obj2 sayHello];
+    [obj1 noBB:10 :11];
     int *t2 = [obj2 testFun2];
     NSLog(@"t2=%d", *t2);
     NSLog(@"obj1.weight=%f", obj1.weight);
@@ -135,6 +141,7 @@ NSString *intToBinary(int intValue) {
     [((Square *) shape) setId:@"1488555"];
     [((Square *) shape) printId];
     NSLog(@"%@", [@"byte" getCopyRightString]);
+    NSLog(@"%@", [@"hello " appendHaHa]);
     NSString *format = [NSString stringWithFormat:@"ieieieie%d", 10000];
     NSLog(format);
     @try {

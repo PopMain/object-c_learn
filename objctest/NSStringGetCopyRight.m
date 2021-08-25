@@ -10,3 +10,8 @@
     return [self stringByAppendingString:@"CopyRight"];
 }
 @end
+@implementation NSString(AppendHaHa)
+-(NSString *)appendHaHa {
+    return [self stringByAppendingString:@"HaHa"];
+}
+@end
